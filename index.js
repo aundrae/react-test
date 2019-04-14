@@ -32,10 +32,6 @@ class App extends Component {
             </Typography>
           </ToolBar>
         </AppBar>
-        <Drawer open={true} width={190}>
-          <ListItem primaryText="Users" />
-          <ListItem primaryText="Settings"/>
-        </Drawer>
       </Router>
     );
   }
