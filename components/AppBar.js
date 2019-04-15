@@ -15,6 +15,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Hello from './Hello';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -66,7 +67,7 @@ function PermanentDrawerLeft(props) {
         <Divider />
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} component={Link} to='/'>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
@@ -75,22 +76,18 @@ function PermanentDrawerLeft(props) {
         <Divider />
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <Link to="/">
-              <ListItem button key={text}>
+              <ListItem button key={text} component={Link} to="/home">
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
-            </Link>
           ))}
         </List>
       </Drawer>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Hello/>
+        <div className={classes.toolbar}/>
+        <Route exact path="/" component={Hello}/>
       </main>
     </div>
-      <Route exact path="/" component={Hello} />
-
     </Router>
   );
 }
