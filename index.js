@@ -3,7 +3,8 @@ import { render } from 'react-dom';
 import './style.css';
 import PermanentDrawerLeft from './components/AppBar'
 class App extends Component {
-  constructor() {
+  constructor(props) {
+    super(props)
     this.state = {
       name: 'React',
     };
@@ -11,7 +12,7 @@ class App extends Component {
   
   render() {
     return (
-      <h1>style</h1>
+      <PermanentDrawerLeft />
     )
   }
 }
