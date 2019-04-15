@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './style.css';
-import PermanentDrawerLeft from './components/AppBar'
+import EmployTT from './components/AppBar'
 class App extends Component {
   constructor(props) {
     super(props)
@@ -12,7 +12,7 @@ class App extends Component {
   
   render() {
     return (
-      <PermanentDrawerLeft />
+      <EmployTT />
     )
   }
 }
