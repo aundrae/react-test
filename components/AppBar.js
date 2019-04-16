@@ -153,7 +153,7 @@ class MiniDrawer extends React.Component {
           <Divider />
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
+              <ListItem button key={text} onClick={this.handleDrawerClose}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
@@ -162,7 +162,7 @@ class MiniDrawer extends React.Component {
           <Divider />
           <List>
             {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
+              <ListItem button key={text} onClick={this.handleDrawerClose}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
