@@ -144,7 +144,7 @@ class MiniDrawer extends React.Component {
             }),
           }}
           open={this.state.open}
-        >
+          onClose={this.handleDrawerClose}>
           <div className={classes.toolbar}>
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
