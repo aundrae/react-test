@@ -152,7 +152,7 @@ class MiniDrawer extends React.Component {
             </IconButton>
           </div>
           <Divider />
-          <Link to ='/account'>
+          <Link to ='/account' style={{ textDecoration: 'none' }}>
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem button key={text} onClick={this.handleDrawerClose}>      
