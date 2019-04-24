@@ -18,9 +18,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
+import Notifications from '@material-ui/icons/Notifications'
 import MailIcon from '@material-ui/icons/Mail';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Profile from './Profile';
+import Notification from './Notification'
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -152,16 +154,25 @@ class MiniDrawer extends React.Component {
             </IconButton>
           </div>
           <Divider />
-          <Link to ='/account' style={{ textDecoration: 'none' }}>
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text} onClick={this.handleDrawerClose}>      
-                <ListItemIcon>{index % 2 === 0 ? <AccountCircle /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+            <Link to ='/' style={{ textDecoration: 'none' }}>
+              <ListItem button key="Profile" onClick={this.handleDrawerClose}>      
+                <ListItemIcon>
+                  <AccountCircle /> 
+                </ListItemIcon>
+                <ListItemText primary="Profile" />
               </ListItem>
-            ))}
+              </Link>
+              <Link to ='/notifications' style={{ textDecoration: 'none' }}>
+              <ListItem button key="Profile" onClick={this.handleDrawerClose}>      
+                <ListItemIcon>
+                  <Notifications /> 
+                </ListItemIcon>
+                <ListItemText primary="Notifications" />
+              </ListItem>
+              </Link>
+              
           </List>
-          </Link>
           <Divider />
           <List>
             {['All mail', 'Trash', 'Spam'].map((text, index) => (
@@ -174,7 +185,8 @@ class MiniDrawer extends React.Component {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-            <Route exact path="/account" component={Profile}/>
+            <Route exact path="/" component={Profile}/>
+            <Route path="/notifications" component={Notification} />
         </main>
       </div>
       </Router>
