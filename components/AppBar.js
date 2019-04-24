@@ -22,7 +22,8 @@ import Notifications from '@material-ui/icons/Notifications'
 import MailIcon from '@material-ui/icons/Mail';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Profile from './Profile';
-import Notification from './Notification'
+import Notification from './Notification';
+import SimpleDialog from './ModalLogin'
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -92,6 +93,7 @@ const styles = theme => ({
 class EmployTT extends React.Component {
   state = {
     open: false,
+    modal: true,
   };
 
   handleDrawerOpen = () => {
@@ -101,12 +103,24 @@ class EmployTT extends React.Component {
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
+  handleClickOpen = () => {
+    this.setState({
+      modal: true,
+    });
+  };
 
+  handleClose = value => {
+    this.setState({ modal: false });
+  };
   render() {
     const { classes, theme } = this.props;
 
     return (
       <Router>
+      {this.state.modal &&
+      <SimpleDialog
+          open={this.state.modal}
+          onClose={this.handleClose} /> }
         <div className={classes.root}>
         <CssBaseline />
         <AppBar
