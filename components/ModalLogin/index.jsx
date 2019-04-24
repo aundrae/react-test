@@ -52,7 +52,7 @@ class SimpleDialog extends React.Component {
               type= 'text'
               value={this.state.email}
               onChange={this.handleChange('email')}
-            />
+            isRequired={true}/>
          </FormControl>
           <Divider />
           <FormControl>
@@ -61,6 +61,7 @@ class SimpleDialog extends React.Component {
             type= 'password'
             value={this.state.password}
             onChange={this.handleChange('password')}
+            isRequired={true}
           />
         </FormControl>
         <FormControl>
