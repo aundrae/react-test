@@ -89,7 +89,7 @@ const styles = theme => ({
   },
 });
 
-class MiniDrawer extends React.Component {
+class EmployTT extends React.Component {
   state = {
     open: false,
   };
@@ -194,9 +194,9 @@ class MiniDrawer extends React.Component {
   }
 }
 
-MiniDrawer.propTypes = {
+EmployTT.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(MiniDrawer);
+export default withStyles(styles, { withTheme: true })(EmployTT);
