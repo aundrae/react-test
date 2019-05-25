@@ -21,9 +21,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Notifications from '@material-ui/icons/Notifications'
 import MailIcon from '@material-ui/icons/Mail';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import Profile from './Profile';
-import Notification from './Notification';
-import SimpleDialog from './ModalLogin'
+import Profile from '../Profile';
+import Notification from '../Notification';
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -103,24 +102,11 @@ class EmployTT extends React.Component {
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
-  handleClickOpen = () => {
-    this.setState({
-      modal: true,
-    });
-  };
-
-  handleClose = value => {
-    this.setState({ modal: false });
-  };
   render() {
     const { classes, theme } = this.props;
 
     return (
       <Router>
-      {this.state.modal &&
-      <SimpleDialog
-          open={this.state.modal}
-          onClose={this.handleClose} /> }
         <div className={classes.root}>
         <CssBaseline />
         <AppBar
@@ -169,7 +155,7 @@ class EmployTT extends React.Component {
           </div>
           <Divider />
           <List>
-            <Link to ='/' style={{ textDecoration: 'none' }}>
+            <Link to ='/profile' style={{ textDecoration: 'none' }}>
               <ListItem button key="Profile" onClick={this.handleDrawerClose}>      
                 <ListItemIcon>
                   <AccountCircle /> 
@@ -199,7 +185,7 @@ class EmployTT extends React.Component {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-            <Route exact path="/" component={Profile}/>
+            <Route exact path="/profile" component={Profile}/>
             <Route path="/notifications" component={Notification} />
         </main>
       </div>
