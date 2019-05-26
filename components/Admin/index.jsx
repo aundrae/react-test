@@ -185,7 +185,7 @@ class EmployTT extends React.Component {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-            <Route path="/admin/profile/" component={Profile} /> 
+            <Route path="/admin/profile" component={Profile} /> 
             <Route path="/admin/notifications" component={Notification} />
         </main>
       </div>
