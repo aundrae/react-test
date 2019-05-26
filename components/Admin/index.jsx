@@ -106,7 +106,7 @@ class EmployTT extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <Router>
+      <Router path='/admin/profile'>
         <div className={classes.root}>
         <CssBaseline />
         <AppBar
@@ -155,7 +155,7 @@ class EmployTT extends React.Component {
           </div>
           <Divider />
           <List>
-            <Link to ='/profile' style={{ textDecoration: 'none' }}>
+            <Link to ='/admin/profile' style={{ textDecoration: 'none' }}>
               <ListItem button key="Profile" onClick={this.handleDrawerClose}>      
                 <ListItemIcon>
                   <AccountCircle /> 
@@ -163,7 +163,7 @@ class EmployTT extends React.Component {
                 <ListItemText primary="Profile" />
               </ListItem>
               </Link>
-              <Link to ='/notifications' style={{ textDecoration: 'none' }}>
+              <Link to ='/admin/notifications' style={{ textDecoration: 'none' }}>
               <ListItem button key="Profile" onClick={this.handleDrawerClose}>      
                 <ListItemIcon>
                   <Notifications /> 
@@ -185,8 +185,8 @@ class EmployTT extends React.Component {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-            <Route exact path="/profile" component={Profile}/>
-            <Route path="/notifications" component={Notification} />
+            <Route path="/admin/profile/" component={Profile} /> 
+            <Route path="/admin/notifications" component={Notification} />
         </main>
       </div>
       </Router>

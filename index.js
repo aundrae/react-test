@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import './style.css';
-import EmployTT from './components/Login'
+import EmployTT from './components/MainScreen'
 class App extends Component {
   constructor(props) {
     super(props)
